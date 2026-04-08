@@ -1,0 +1,4 @@
+ALTER TABLE bikes 
+ADD COLUMN location VARCHAR(100),
+ADD COLUMN image VARCHAR(255),
+ADD COLUMN price_per_hour INT DEFAULT 0;

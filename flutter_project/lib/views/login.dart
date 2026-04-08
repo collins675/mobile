@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: surfaceColor,
       // appBar: AppBar(
       //   backgroundColor: Colors.deepOrangeAccent,
       //   title: Text("Logging Page", style: TextStyle(color: Colors.white)),
@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Text(
               "RB",
               style: TextStyle(
-                color: Colors.blue,
+                color: primaryColor,
                 fontSize: 30,
                 fontWeight: FontWeight.w800,
               ),
@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: Text(
                     "Login",
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: inverseTextColor, fontSize: 14),
                   ),
                 ),
               ),
@@ -138,9 +138,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 } else {
                   Get.snackbar(
                     "Login Failed",
-                    "Invalid email or password",
-                    backgroundColor: Color.fromARGB(255, 69, 58, 142),
-                    colorText: Color.fromARGB(255, 211, 24, 24),
+                    logincontroller.errorMessage.value ??
+                        "Invalid email or password",
+                    backgroundColor: dangerSurfaceColor,
+                    colorText: dangerColor,
                   );
                 }
               },
